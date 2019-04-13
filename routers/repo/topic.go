@@ -30,7 +30,7 @@ func TopicsPost(ctx *context.Context) {
 	invalidTopics := make([]string, 0)
 	i := 0
 	for _, topic := range topics {
-		topic = strings.TrimSpace(strings.ToLower(topic))
+		topic = strings.TrimSpace(topic)
 		// ignore empty string
 		if len(topic) > 0 {
 			topics[i] = topic
