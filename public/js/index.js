@@ -3031,12 +3031,12 @@ function initTopicbar() {
             },
         },
         onLabelCreate: function(value) {
-            value = value.toLowerCase().trim();
+            value = value.trim();
             this.attr("data-value", value).contents().first().replaceWith(value);
             return $(this);
         },
         onAdd: function(addedValue, _addedText, $addedChoice) {
-            addedValue = addedValue.toLowerCase().trim();
+            addedValue = addedValue.trim();
             $($addedChoice).attr('data-value', addedValue);
             $($addedChoice).attr('data-text', addedValue);
         }
@@ -3060,7 +3060,7 @@ function initTopicbar() {
                     rules: [
                         {
                             type: 'validateTopic',
-                            value: /^[a-z0-9][a-z0-9-]{1,35}$/,
+                            value: /^[A-Za-z0-9][A-Za-z0-9-]{1,35}$/,
                             prompt: topicPrompts.formatPrompt
                         },
                         {
