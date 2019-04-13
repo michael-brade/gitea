@@ -21,7 +21,7 @@ func init() {
 	)
 }
 
-var topicPattern = regexp.MustCompile(`^[a-z0-9][a-z0-9-]*$`)
+var topicPattern = regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9-]*$`)
 
 // Topic represents a topic of repositories
 type Topic struct {
@@ -127,7 +127,7 @@ func SaveTopics(repoID int64, topicNames ...string) error {
 
 		var found bool
 		for _, t := range topics {
-			if strings.EqualFold(topicName, t.Name) {
+			if topicName == t.Name {
 				found = true
 				break
 			}
@@ -141,7 +141,7 @@ func SaveTopics(repoID int64, topicNames ...string) error {
 	for _, t := range topics {
 		var found bool
 		for _, topicName := range topicNames {
-			if strings.EqualFold(topicName, t.Name) {
+			if topicName == t.Name {
 				found = true
 				break
 			}
